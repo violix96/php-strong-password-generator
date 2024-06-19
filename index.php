@@ -18,6 +18,24 @@
             </div>
             <button type="submit" class="btn btn-primary">Genera Password</button>
         </form>
+        <?php
+
+        // verifica della presenza del parametro length
+        if (isset($_GET['length'])) {
+            // conversione del parametro length in un intero 
+            $length = intval($_GET['length']);
+            // generazione della password 
+            $password = generatePassword($length);
+            echo '<div class="alert alert-success">Password Generata: ' . $password . '</div>';
+        }
+
+        // funzione per generare la password 
+        function generatePassword($length)
+        {
+            return 'password provvisoria generata';
+        }
+        ?>
+
     </div>
 </body>
 
